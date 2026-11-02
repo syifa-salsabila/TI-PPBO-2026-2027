@@ -1,17 +1,22 @@
 public class latihanClassProduk {
     public static void main(String[] args) {
-        produk p1 = new produk("Laptop", 8000000);
-        produk p2 = new produk("mouse", 150000);
+        produk p1 = new produk("P001", "lip balm", 25000, 20);
 
-        double batasHarga = 1000000;
+        System.out.println("kode produk: " + p1.getKodeProduk());
+        System.out.println("nama produk: " + p1.getNamaProduk());
+        System.out.println("harga: " + p1.getHarga());
+        System.out.println("stok awal: " + p1.getStok());
 
-        System.out.println("Produk: " + p1.namaProduk);
-        System.out.println("harga: " + p1.harga);
-        System.out.println("mahal: " + p1.isMahal(batasHarga));
-        System.out.println("---");
+        System.out.println("\nmenambah stok:");
+        p1.tambahStok(10);
+        System.out.println("stok sekarang: " + p1.getStok());
 
-        System.out.println("Produk: " + p2.namaProduk);
-        System.out.println("harga: " + p2.harga);
-        System.out.println("mahal: " + p2.isMahal(batasHarga));
+        System.out.println("\nmengurangi stok:");
+        p1.kurangiStok(5);
+        System.out.println("stok sekarang: " + p1.getStok());
+
+        System.out.println("\npengujian validasi:");
+        p1.setHarga(-5000);
+        p1.kurangiStok(100);
     }
 }
